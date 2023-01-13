@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from flask import Flask, render_template
 
 app = Flask(__name__)
@@ -16,3 +17,14 @@ def about():
 
 
 app.run(debug=True)
+=======
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route('/')
+def hello():
+    return "Hello lalit"
+
+app.run()
+>>>>>>> origin/main
