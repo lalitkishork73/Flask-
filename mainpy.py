@@ -3,8 +3,8 @@ from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:"Lalit@33cool"@localhost/flaskdataapp'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://lalit:Lalit@33cool@localhost/flaskdataapp'
+# app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
 
@@ -42,8 +42,8 @@ def blogdetails():
 @app.route('/contact', methods=['GET', 'POST'])
 def contact():
     if (request.method == 'POST'):
-        name = request.form['name']
-        email = request.form['email']
+        name = request.form.get('name')
+        email = request.form.get('email')
         subject = request.form['subject']
         message = request.form['message']
 
